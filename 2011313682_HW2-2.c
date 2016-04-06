@@ -18,11 +18,11 @@ a[N1-'0']++; //입력값이 char형태이므로
 a[N2-'0']++;
 a[N3-'0']++;
 
-for(i=0; i<10; i++){
+for(i = 0; i < 10; i++){
 	if(a[i]==0)
 		c++; //배열 내 0의 개수를 통해 모든 카드가 같은 숫자인지, 두개는 같고 하나는 다른 숫자인지, 모두 다른 숫자인지 판단할 수 있다. 
 	else if(a[i]==2){
-		DV=s[k]=i; // 두 카드는 숫자가 같고 한 카드는 숫자가 다르면서 스트레이트가 불가능 할 때는 트리플로 변환해야하는데 그 때의 high card value를 얻기 위해 필요하다
+		DV=s[k]=i; // 두 카드는 숫자가 같고 한 카드는 숫자가 다르면서 스트레이트가 불가능 할 때는 트리플로 변환해야 하는데 그 때의 high card value를 얻기 위해 필요하다
 		k++;
 	}
 	else{
@@ -100,8 +100,12 @@ int main(void) {
 	scanf("%c%c %c%c %c%c %c%c %c%c %c%c", &BN1, &BS1, &BN2, &BS2, &BN3, &BS3, &WN1, &WS1, &WN2, &WS2, &WN3, &WS3);
 
 	result = Foker_hands(BN1, BS1, BN2, BS2, BN3, BS3,WN1, WS1, WN2, WS2, WN3, WS3);
-	if (result==1) printf("White wins.\n");
-	else if (result==-1) printf("Black wins.\n");
-	else printf("Tie.\n");
+	
+	if (result==1)
+		printf("White wins.\n");
+	else if (result==-1)
+		printf("Black wins.\n");
+	else
+		printf("Tie.\n");
 	return 0;
 }
